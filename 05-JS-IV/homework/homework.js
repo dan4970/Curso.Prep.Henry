@@ -103,6 +103,7 @@ function verificarPassword(usuario, password) {
   // Devuelve "true" si coinciden
   // De lo contrario, devuelve "false"
   // // Tu código:
+
   // tambien podria usar para comparar en lugar de password sino arguments[1]
   if(usuario.password===password){
     return true;
@@ -134,10 +135,13 @@ function pasarUsuarioAPremium(usuarios) {
   // Define cada propiedad "esPremium" de cada objeto como "true"
   // Devuelve el array de usuarios
   // Tu código:
-  for(let i=0;i<usuarios.length;i++){
-    usuarios[i].esPremium=true;
-  }
-  return usuarios;
+var nuevo = usuarios.map((usuario)=>usuario.esPremium=true)
+return nuevo;
+
+  // for(let i=0;i<usuarios.length;i++){
+  //   usuarios[i].esPremium=true;
+  // }
+  // return usuarios;
 
   
 }

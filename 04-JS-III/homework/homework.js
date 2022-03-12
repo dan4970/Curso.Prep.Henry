@@ -77,16 +77,17 @@ function arrayContiene(array, elemento) {
   // Tu código:
 // CODIGO DECLARATIVO
   var nuevo= array.some((item)=>item===elemento)
+  return nuevo;
 
 
 // CODIGO IMPERATIVO
 
-  for(let i=0;i<array.length;i++){
-    if(array[i]===elemento){
-      return true;
-    }
-  }
-  return false;
+  // for(let i=0;i<array.length;i++){
+  //   if(array[i]===elemento){
+  //     return true;
+  //   }
+  // }
+  // return false;
   
 }
 
@@ -175,8 +176,12 @@ function cuentoElementos(arreglo){
   //Escribe tu código aquí
 
   // CODIGO DECLARATIVO
-var nuevo=arreglo.filter((elemento)=>elemento>18)
-return nuevo.length;
+var nuevo=arreglo.reduce(function(acumu,elemento){
+    if(elemento>18)return acumu+1;
+    return acumu;//si no cumple la condicion de if() el acumulador no va a sumar 1, por lo tanto va a retornar
+                //el valor al arreglo nuevo el acumulador(acumu)
+  },0)
+return  nuevo;
 
 
   //  var numero=0;

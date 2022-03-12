@@ -84,44 +84,44 @@ return stringreverse;
     //   Domicilio: 'Saavedra 123'
     //  }
 
-  class Persona {
-    constructor(nombre,apellido,edad,domicilio) {
-      this.nombre=nombre,
-      this.apellido=apellido,
-      this.edad=edad,
-      this.domicilio=domicilio
+//   class Persona {
+//     constructor(nombre,apellido,edad,domicilio) {
+//       this.nombre=nombre,
+//       this.apellido=apellido,
+//       this.edad=edad,
+//       this.domicilio=domicilio
 
-      this.detalle=function(){
-        return {
-          Nombre : this.nombre,
-          Apellido : this.apellido,
-          Edad : this.edad,
-          Domicilio: this.domicilio
-        }
-      }
-    }    
-}
+//       this.detalle=function(){
+//         return {
+//           Nombre : this.nombre,
+//           Apellido : this.apellido,
+//           Edad : this.edad,
+//           Domicilio: this.domicilio
+//         }
+//       }
+//     }    
+// }
 
 
    // oh tambien puedo hacerlo con prototype que es lo mismo quedando asi:
-// class Persona {
-//   constructor(nombre,apellido,edad,domicilio) {
-//     this.nombre=nombre,
-//     this.apellido=apellido,
-//     this.edad=edad,
-//     this.domicilio=domicilio
-//   }
-// }
-//   Persona.prototype.detalle=function(){
-//     return {
-//       Nombre : this.nombre,
-//       Apellido : this.apellido,
-//       Edad : this.edad,
-//       Domicilio: this.domicilio
-//     }
-//   }
+class Persona {
+  constructor(nombre,apellido,edad,domicilio) {
+    this.nombre=nombre,
+    this.apellido=apellido,
+    this.edad=edad,
+    this.domicilio=domicilio
+  }
+}
+  Persona.prototype.detalle=function(){
+    return {
+      Nombre : this.nombre,
+      Apellido : this.apellido,
+      Edad : this.edad,
+      Domicilio: this.domicilio
+    }
+  }
    
-  
+  }
 
 function crearInstanciaPersona(nombre, apellido, edad, dir) {
   //Con esta función vamos a crear una nueva persona a partir de nuestro constructor de persona (creado en el ejercicio anterior)
