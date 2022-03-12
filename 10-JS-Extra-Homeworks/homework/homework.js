@@ -19,16 +19,27 @@ function numberOfCharacters(string) {
   //en formato par clave-valor.
   //Ej: Recibe ---> "adsjfdsfsfjsdjfhacabcsbajda" || Devuelve ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 } 
   //Escribe tu código aquí
-  let conteo={};
-for(let i=0; i<string.length;i++){
-  if(conteo.hasOwnProperty(string[i]))//existe alguna propiedad con el valor de string[i]?? en este caso por ejemplo el "a"
-  { conteo[string[i]]=conteo[string[i]]+1;  //sumo en uno el contador del la letra q se repite, si no se repite o es la primera vez q entra pasa directamente al else
-  }
-  else{
-    conteo[string[i]]=1; //si es la primera vez de la letra , se creo una propiedad(string[i]=a) en el objeto (conteo)en donde se le atribuye el valor uno para iniciar el contador 
-  }
-}
-return conteo;
+//   let conteo={};
+// for(let i=0; i<string.length;i++){
+//   if(conteo.hasOwnProperty(string[i]))//existe alguna propiedad con el valor de string[i]?? en este caso por ejemplo el "a"
+//   { conteo[string[i]]=conteo[string[i]]+1;  //sumo en uno el contador del la letra q se repite, si no se repite o es la primera vez q entra pasa directamente al else
+//   }
+//   else{
+//     conteo[string[i]]=1; //si es la primera vez de la letra , se creo una propiedad(string[i]=a) en el objeto (conteo)en donde se le atribuye el valor uno para iniciar el contador 
+//   }
+// }
+// return conteo;
+
+
+// RESUELTO CON EL METODO DECLARATIVO!! PROGRAMACION FUNCIONAL XDDDDD
+var array=string.split('')
+var obj={}
+array.map((letra)=>(obj[letra])?obj[letra]++:(obj[letra]=1))  
+return obj;
+//PRIMERO CONVIERTO EL STRING EN UNA ARRAY Y CON ESE ARRAY LO MAPEO BUCANDO CON UN IF SI EXISTE EL 
+//obj.letra=a  SI ESQUE EXISTE LO CONTEA DE VUELTA Y SI NO EXISTE PASA A ELSE Y ALLI CREO UNA NUEVA PROPIEDAD EN 
+//EL OBJETO (obj ) ASIGNANDOLE LA PROPIEDAD (a) Y EL VALOR DE 1 DE ESA PROPIEDAD Y DE ESA FORMA VA CONTANDO !! 
+
 }
 
 
@@ -99,26 +110,36 @@ function buscoInterseccion(arreglo1, arreglo2){
   //Aclaración: los arreglos no necesariamente tienen la misma longitud
   //Escribe tu código aquí  
 
-// metodo declarativo
+// METODO DECLARATIVO:
 
-  // var nuevo=arreglo1.filter((ele1)=>arreglo2.indexOf(ele1)!==-1)  //con el indexOf estoy buscando en el array2
+  var nuevo=arreglo1.filter((ele1)=>arreglo2.indexOf(ele1)!==-1)  //con el indexOf estoy buscando en el array2
   //                                                                 //si exixte algun numero que es el ele1 del array 1
   //                                                                 //que si lo encuentra lo coloca en un nuevo array mediante 
   //                                                                 //el filter xDDD
-  // return nuevo;
-// 
+  return nuevo;
 
 
-// metodo imperativo:
-var int=[];
-for(let i =0;i<arreglo1.length;i++){
-  for(let j=0; j<arreglo2.length;j++){
-    if(arreglo1[i]===arreglo2[j]){
-      int.push(arreglo1[i]);
-    }
-  }
-}
-return int;
+
+// OTRO METODO:
+// var nuevo=arreglo1.filter((ele1)=>(arreglo2.includes(ele1)))       //ahora si utilizo includes() ese me busca un valor 
+//                                                                     // en comun y si encuentra devuelve true y si es true 
+//                                                                    //carga el valor en comun ala nueva array.
+// return nuevo;
+
+
+
+
+
+// OTRO METODO, METODO IMPERATIVO:
+// var int=[];
+// for(let i =0;i<arreglo1.length;i++){
+//   for(let j=0; j<arreglo2.length;j++){
+//     if(arreglo1[i]===arreglo2[j]){
+//       int.push(arreglo1[i]);
+//     }
+//   }
+// }
+// return int;
 }
 
 
